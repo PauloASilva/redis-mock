@@ -17,4 +17,18 @@ describe.only('multi', function () {
 
     done();
   });
+
+  it('should return the array ["OK", "OK"]', function (done) {
+    var r = redismock.createClient();
+
+      r.multi()
+        .set('foo', 'bar')
+        .set('hello', 'world')
+        .exec(function (replies) {
+          replies.should.be.instanceOf(Array).and.have.lengthOf(2);
+          replies.should.eql(['OK','OK']);
+          done();
+        })
+      ;
+  });
 });
