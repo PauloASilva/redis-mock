@@ -34,6 +34,7 @@
   },
   "engine": "node >= 0.10.0",
   "dependencies": {
-    "collections": "~1.2.1"
+    "collections": "~1.2.1",
+    "async": "~0.9.0"
   }
 }
