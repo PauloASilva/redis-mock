@@ -24,7 +24,7 @@ describe.only('multi', function () {
       r.multi()
         .set('foo', 'bar')
         .set('hello', 'world')
-        .exec(function (replies) {
+        .exec(function (err, replies) {
           replies.should.be.instanceOf(Array).and.have.lengthOf(2);
           replies.should.eql(['OK','OK']);
           done();
